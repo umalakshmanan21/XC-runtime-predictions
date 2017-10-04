@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package learningselenium;
+package NCHSAA;
 
 /**
  *
@@ -34,37 +34,23 @@ public class NCMileSplit {
     public static void main(String[] args) throws IOException {
 
         // Firefox profile creation
-        
-        
-       
         ProfilesIni prof = new ProfilesIni()	;			
         
         FirefoxProfile profile= prof.getProfile ("my profile");
         System.setProperty("webdriver.gecko.driver", "/Users/VP/Downloads/geckodriver");
         
 //FirefoxProfile testprofile = profile.getProfile("default");
-profile.setAcceptUntrustedCertificates(true);
-profile.setAssumeUntrustedCertificateIssuer(true);
+        profile.setAcceptUntrustedCertificates(true);
+        profile.setAssumeUntrustedCertificateIssuer(true);
 
-File extensionToInstall = new File("/Users/VP/Downloads/adblock_plus-2.7.3-sm+tb+fx+an.xpi");
-profile.addExtension(extensionToInstall);
-
-WebDriver driver = new FirefoxDriver(profile);
-
-
-        
-        
-        
+        File extensionToInstall = new File("/Users/VP/Downloads/adblock_plus-2.7.3-sm+tb+fx+an.xpi");
+        profile.addExtension(extensionToInstall);
+        WebDriver driver = new FirefoxDriver(profile);
         // setting the appurl
         String appUrl = "http://nc.milesplit.com";
-        
-        
-        
-
         // launch the firefox browser and open the application url
         driver.get(appUrl);
         //driver.switchTo().defaultContent();
-
         //Getting all the links' text in the page
        driver.findElement(By.className("login")).click();
         //Seperating each text 
@@ -81,10 +67,7 @@ WebDriver driver = new FirefoxDriver(profile);
         driver.quit();
         System.exit(0);
         
-        
 
-        
-/*
         //creating an object to accomadate the school location/classification/Name
         List<objectclass> Alldata = null;
         Alldata = new ArrayList<>();
@@ -140,7 +123,6 @@ WebDriver driver = new FirefoxDriver(profile);
 // terminate the program
         
     }
-*/
 
 }
     
